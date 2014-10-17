@@ -2,7 +2,6 @@ package com.atlassian.jira.rest.tutorial.issuetest;
 
 import java.io.IOException;
 import java.net.URI;
-import java.util.concurrent.ExecutionException;
 
 import com.atlassian.jira.rest.client.api.JiraRestClient;
 import com.atlassian.jira.rest.client.api.domain.BasicIssue;
@@ -34,7 +33,7 @@ public class IssueCreateExample {
 				final Issue issue = restClient.getIssueClient()
 						.getIssue(key).claim();
 				System.out.println(issue);
-			} catch (InterruptedException | ExecutionException e) {
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		} finally {
